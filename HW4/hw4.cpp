@@ -43,28 +43,26 @@ int main()
     while(str[lastone]==' ')
         lastone--;
 
-    weight=1;//If the number is 10000, I will parse it until I encounter �ť���.
+    weight=1;
     while(str[lastone]>='0' && str[lastone]<='9') {
         total_val1 = total_val1 + (str[lastone]-'0')*weight;
         weight*=10;
         lastone--;
     }
-    lastone--;//���L�Ů�
+    lastone--;
     weight=1;
     while(str[lastone]>='0' && str[lastone]<='9') {
         total_col1 = total_col1 + (str[lastone]-'0')*weight;
         weight*=10;
         lastone--;
     }
-    lastone--;//���L�Ů�
+    lastone--;
     weight=1;
     while(str[lastone]>='0' && str[lastone]<='9') {
         total_row1 = total_row1 + (str[lastone]-'0')*weight;
         weight*=10;
         lastone--;
     }
-
-    //printf("�Ʀr%d %d %d\n",total_row1,total_col1,total_val1);//for test.����n�R!!!!!
 
     for(int i=0; i<total_val1; i++) {
         gets(str);
@@ -73,14 +71,14 @@ int main()
         while(str[lastone]==' ')
             lastone--;
 
-        weight=1;//If the number is 10000, I will parse it until I encounter �ť���.
+        weight=1;//If the number is 10000, I will parse it until I encounter.
         temp_val=0;
         while(str[lastone]>='0' && str[lastone]<='9') {
             temp_val = temp_val + (str[lastone]-'0')*weight;
             weight*=10;
             lastone--;
         }
-        lastone--;//���L�Ů�
+        lastone--;
         weight=1;
         temp_col=0;
         while(str[lastone]>='0' && str[lastone]<='9') {
@@ -88,7 +86,7 @@ int main()
             weight*=10;
             lastone--;
         }
-        if(temp_col>=total_col1) { //�p�G��J��col�o����col�`�ƩΤj��A���O�H�k��!!�A��J�@���A�����J��
+        if(temp_col>=total_col1) { 
             do {
                 printf("Your column number is wrong!Please input its column number again.\n");
                 gets(temp_str);
@@ -96,7 +94,7 @@ int main()
             } while(temp_col>=total_col1);
         }
 
-        lastone--;//���L�Ů�
+        lastone--;
         weight=1;
         temp_row=0;
         while(str[lastone]>='0' && str[lastone]<='9') {
@@ -104,30 +102,27 @@ int main()
             weight*=10;
             lastone--;
         }
-        if(temp_row>=total_row1) { //�p�G��J��row�o����row�`�ƩΤj��A���O�H�k��!!�A��J�@���A�����J��
+        if(temp_row>=total_row1) { 
             do {
                 printf("Your row number is wrong!Please input its row number again.\n");
                 gets(temp_str);
                 temp_row=atoi(temp_str);
             } while(temp_row>=total_row1);
         }
-        //printf("%d %d %d\n",temp_row,temp_col,temp_val);//for test.����n�R!!!!!
 
         current1=(struct node *)malloc(sizeof(struct node));
         datainlink(current1,temp_row,temp_col,temp_val);
 
         if(i==0) {
-            first1=current1;  //�p�G�O�Ĥ@�Ӧ��������frist���V�ثe���`�I
+            first1=current1;  
         } else {
-            previous1->next=current1;//��e�@�Ӫ�next���V�ثe���`�I
+            previous1->next=current1;
         }
-        current1->next=NULL; //��ثe���`�I��next���VNULL
-        previous1=current1; //��e�@�Ӹ`�I�]���ثe���`�I
+        current1->next=NULL; 
+        previous1=current1; 
 
     }
 
-    //mwrite(first1, current1); //for test.
-///////////////////////////////////////////////////////////////////////////////////////////////
     printf("matrix b: enter number of rows, number of columns, number of nonzero terms.\n");
     gets(str);
     lastone=strlen(str)-1;
@@ -138,20 +133,20 @@ int main()
     while(str[lastone]==' ')
         lastone--;
 
-    weight=1;//If the number is 10000, I will parse it until I encounter �ť���.
+    weight=1;
     while(str[lastone]>='0' && str[lastone]<='9') {
         total_val2 = total_val2 + (str[lastone]-'0')*weight;
         weight*=10;
         lastone--;
     }
-    lastone--;//���L�Ů�
+    lastone--;
     weight=1;
     while(str[lastone]>='0' && str[lastone]<='9') {
         total_col2 = total_col2 + (str[lastone]-'0')*weight;
         weight*=10;
         lastone--;
     }
-    lastone--;//���L�Ů�
+    lastone--;
     weight=1;
     while(str[lastone]>='0' && str[lastone]<='9') {
         total_row2 = total_row2 + (str[lastone]-'0')*weight;
@@ -159,7 +154,6 @@ int main()
         lastone--;
     }
 
-    //printf("�Ʀr%d %d %d\n",total_row2,total_col2,total_val2);//for test.����n�R!!!!!
 
     for(int i=0; i<total_val2; i++) {
         gets(str);
@@ -168,14 +162,14 @@ int main()
         while(str[lastone]==' ')
             lastone--;
 
-        weight=1;//If the number is 10000, I will parse it until I encounter �ť���.
+        weight=1;//If the number is 10000, I will parse it until I encounter .
         temp_val=0;
         while(str[lastone]>='0' && str[lastone]<='9') {
             temp_val = temp_val + (str[lastone]-'0')*weight;
             weight*=10;
             lastone--;
         }
-        lastone--;//���L�Ů�
+        lastone--;
         weight=1;
         temp_col=0;
         while(str[lastone]>='0' && str[lastone]<='9') {
@@ -183,14 +177,14 @@ int main()
             weight*=10;
             lastone--;
         }
-        if(temp_col>=total_col2) { //�p�G��J��col�o����col�`�ƩΤj��A���O�H�k��!!�A��J�@���A�����J��
+        if(temp_col>=total_col2) { 
             do {
                 printf("Your column number is wrong!Please input its column number again.\n");
                 gets(temp_str);
                 temp_col=atoi(temp_str);
             } while(temp_col>=total_col2);
         }
-        lastone--;//���L�Ů�
+        lastone--;
         weight=1;
         temp_row=0;
         while(str[lastone]>='0' && str[lastone]<='9') {
@@ -198,7 +192,7 @@ int main()
             weight*=10;
             lastone--;
         }
-        if(temp_row>=total_row2) { //�p�G��J��row�o����row�`�ƩΤj��A���O�H�k��!!�A��J�@���A�����J��
+        if(temp_row>=total_row2) { 
             do {
                 printf("Your row number is wrong!Please input its row number again.\n");
                 gets(temp_str);
@@ -206,18 +200,18 @@ int main()
             } while(temp_row>=total_row2);
         }
 
-        //printf("%d %d %d\n",temp_row,temp_col,temp_val);//for test.����n�R!!!!!
+        !
 
         current2=(struct node *)malloc(sizeof(struct node));
         datainlink(current2,temp_row,temp_col,temp_val);
 
         if(i==0) {
-            first2=current2;  //�p�G�O�Ĥ@�Ӧ��������frist���V�ثe���`�I
+            first2=current2;  
         } else {
-            previous2->next=current2;//��e�@�Ӫ�next���V�ثe���`�I
+            previous2->next=current2;
         }
-        current2->next=NULL; //��ثe���`�I��next���VNULL
-        previous2=current2; //��e�@�Ӹ`�I�]���ثe���`�I
+        current2->next=NULL; 
+        previous2=current2; 
     }
     printf("----------------(Friendly remind)----------------\n");
     printf("Input 1 make matrix b transposed.(Won't show')\n");
@@ -268,9 +262,9 @@ void datainlink(struct node *current,int Row, int Col, int Val)
 void mwrite(struct node *first, struct node *current)
 {
     current=first;
-    while(current!=NULL) { //for test.����n�R!!!!!
-        printf("%d %d %d \n",current->row,current->column,current->value); //�L�X�`�I�����
-        current=current->next;  //�Nptr���V�U�@�Ӹ`�I
+    while(current!=NULL) { 
+        printf("%d %d %d \n",current->row,current->column,current->value); 
+        current=current->next; 
     }
 }
 
